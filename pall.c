@@ -1,13 +1,21 @@
 #include "monty.h"
 
 /**
- * _pall - Prints all the values on the stack.
- * @stack: Double pointer to the head of the stack.
- * @line_number: Line number of the opcode.
+ * _pall - print elements stack
+ * @stack: is a parameter
+ * @n: is value
+ * Return: nothing
  */
-void _pall(stack_t **stack, unsigned int line_number)
+void _pall(stack_t **stack, unsigned int n)
 {
-    (void)line_number;
+	stack_t *current = NULL;
+	(void)n;
 
-    print_stack(*stack);
+	current = *stack;
+
+	while (current != NULL)
+	{
+		dprintf(STDOUT_FILENO, "%d\n", current->n);
+		current = current->next;
+	}
 }
