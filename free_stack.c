@@ -18,3 +18,11 @@ void free_stack(stack_t **stack)
         *stack = temp;
     }
 }
+
+/**
+ * free_all - Frees all memory allocated by a Monty program.
+ */
+void free_all(void)
+{
+    free_stack(&stack);
+}
