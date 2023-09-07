@@ -6,17 +6,17 @@
  */
 void free_stack(stack_t **stack)
 {
-    stack_t *temp;
+	stack_t *temp;
 
-    if (!stack || !*stack)
-        return;
+	if (!stack || !*stack)
+		return;
 
-    while (*stack)
-    {
-        temp = (*stack)->next;
-        free(*stack);
-        *stack = temp;
-    }
+	while (*stack)
+	{
+		temp = (*stack)->next;
+		free(*stack);
+		*stack = temp;
+	}
 }
 
 /**
@@ -24,5 +24,5 @@ void free_stack(stack_t **stack)
  */
 void free_all(void)
 {
-    free_stack(&stack);
+	free_stack(&stack);
 }
