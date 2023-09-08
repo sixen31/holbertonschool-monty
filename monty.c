@@ -1,27 +1,21 @@
 #include "monty.h"
 
-/**
- * main - Entry point for Monty bytecode interpreter.
- * @argc: Number of command line arguments.
- * @argv: Array of command line argument strings.
- * Return: EXIT_SUCCESS on success, EXIT_FAILURE on failure.
- */
 int main(int argc, char **argv)
 {
 	if (argc != 2)
 	{
 		fprintf(stderr, "Usage: monty file\n");
-		exit(EXIT_FAILURE);
+		return (EXIT_FAILURE);
 	}
 
+	stack_t *stack = NULL;
 	FILE *file = fopen(argv[1], "r");
 
 	if (!file)
 	{
 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
-		exit(EXIT_FAILURE);
+		return (EXIT_FAILURE);
 	}
-
 	char *line = NULL;
 	size_t len = 0;
 	ssize_t nread;
@@ -34,7 +28,6 @@ int main(int argc, char **argv)
 
 		if (!opcode || *opcode == '#')
 			continue;
-
 		instruction_t *instruction = get_instruction(opcode);
 
 		if (!instruction)
@@ -42,15 +35,14 @@ int main(int argc, char **argv)
 			fprintf(stderr, "L%u: unknown instruction %s\n", line_number, opcode);
 			free(line);
 			fclose(file);
-			free_all();
-			exit(EXIT_FAILURE);
+			free_all(&stack)
+				return (EXIT_FAILURE);
 		}
 
 		instruction->f(&stack, line_number);
 	}
-
 	free(line);
 	fclose(file);
-	free_all();
+	free_all(&stack);
 	return (EXIT_SUCCESS);
 }

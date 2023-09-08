@@ -39,15 +39,16 @@ typedef struct instruction_s
 extern stack_t *stack;
 
 void free_stack(stack_t **stack);
-void free_all(void);
+void free_all(stack_t **stack);
 void add_node(stack_t **stack, int n);
 void _pall(stack_t **stack, unsigned int line_number);
 void _push(stack_t **stack, unsigned int line_number);
 void _pint(stack_t **stack, unsigned int line_number);
 void _pop(stack_t **stack, unsigned int line_number);
 void _swap(stack_t **stack, unsigned int line_number);
-void _add(stack_t **stack, unsigned int line_number);
+void _add(stack_t **stack, unsigned        int line_number);
 void _nop(stack_t **stack, unsigned int line_number);
 instruction_t *get_instruction(char *opcode);
 
 #endif /* MONTY_H */
+
