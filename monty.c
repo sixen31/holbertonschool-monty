@@ -35,7 +35,7 @@ int main(int argc, char **argv)
 			fprintf(stderr, "L%u: unknown instruction %s\n", line_number, opcode);
 			free(line);
 			fclose(file);
-			free_all(&stack)
+			free_all(&stack);
 				return (EXIT_FAILURE);
 		}
 
