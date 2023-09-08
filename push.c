@@ -7,16 +7,16 @@
  */
 void _push(stack_t **stack, unsigned int line_number)
 {
-	char *arg = strtok(NULL, " \n\t\r");
-	int n;
+        char *arg = strtok(NULL, " \n\t\r");
+        int n;
 
-	if (!arg || !isdigit(*arg))
-	{
-		fprintf(stderr, "L%u: usage: push integer\n", line_number);
-		exit(EXIT_FAILURE);
-	}
+        if (!arg || !isdigit(*arg))
+        {
+                fprintf(stderr, "L%u: usage: push integer\n", line_number);
+                exit(EXIT_FAILURE);
+        }
 
-	n = atoi(arg);
+        n = atoi(arg);
 
-	add_node(stack, n);
+        add_node(stack, n); 
 }
