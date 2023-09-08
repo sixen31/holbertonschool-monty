@@ -1,7 +1,5 @@
 #include "monty.h"
 
-stack_t *stack = NULL;
-
 /**
  * main - Entry point for Monty bytecode interpreter.
  * @argc: Number of command line arguments.
@@ -17,6 +15,7 @@ int main(int argc, char **argv)
 	}
 
 	FILE *file = fopen(argv[1], "r");
+
 	if (!file)
 	{
 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
@@ -37,6 +36,7 @@ int main(int argc, char **argv)
 			continue;
 
 		instruction_t *instruction = get_instruction(opcode);
+
 		if (!instruction)
 		{
 			fprintf(stderr, "L%u: unknown instruction %s\n", line_number, opcode);
