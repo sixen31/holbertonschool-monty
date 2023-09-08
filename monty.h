@@ -49,6 +49,5 @@ void _swap(stack_t **stack, unsigned int line_number);
 void _add(stack_t **stack, unsigned int line_number);
 void _nop(stack_t **stack, unsigned int line_number);
 instruction_t *get_instruction(char *opcode);
-FILE *erreur(int argc, char **argv);
 
 #endif /* MONTY_H */
