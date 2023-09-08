@@ -7,27 +7,27 @@
  */
 void _push(stack_t **stack, unsigned int line_number)
 {
-    char *arg = strtok(NULL, " \n\t\r");
-    int n, i;
+	char *arg = strtok(NULL, " \n\t\r");
+	int n, i;
 
-    if (!arg)
-    {
-        fprintf(stderr, "L%u: usage: push integer\n", line_number);
-        exit(EXIT_FAILURE);
-    }
+	if (!arg)
+	{
+		fprintf(stderr, "L%u: usage: push integer\n", line_number);
+		exit(EXIT_FAILURE);
+	}
 
-    for (i = 0; arg[i]; i++)
-    {
-        if (i == 0 && arg[i] == '-')
-            continue;
-        if (!isdigit(arg[i]))
-        {
-            fprintf(stderr, "L%u: usage: push integer\n", line_number);
-            exit(EXIT_FAILURE);
-        }
-    }
+	for (i = 0; arg[i]; i++)
+	{
+		if (i == 0 && arg[i] == '-')
+			continue;
+		if (!isdigit(arg[i]))
+		{
+			fprintf(stderr, "L%u: usage: push integer\n", line_number);
+			exit(EXIT_FAILURE);
+		}
+	}
 
-    n = atoi(arg);
+	n = atoi(arg);
 
-    add_node(stack, n);
+	add_node(stack, n);
 }
