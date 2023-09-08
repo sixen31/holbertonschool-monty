@@ -27,6 +27,12 @@ void close_file(FILE *file)
 	fclose(file);
 }
 
+/**
+ * main - Entry point for Monty bytecode interpreter.
+ * @argc: Number of command line arguments.
+ * @argv: Array of command line argument strings.
+ * Return: EXIT_SUCCESS on success, EXIT_FAILURE on failure.
+ */
 int main(int argc, char **argv)
 {
 	if (argc != 2)
