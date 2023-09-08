@@ -3,6 +3,10 @@
 /**
  * free_stack - Frees a stack_t linked list.
  * @stack: Double pointer to the head of the stack.
+ *
+ * Description: This function frees all nodes in a stack_t linked list.
+ * It takes a double pointer to the head of the stack and iterates through
+ * the list, freeing each node's memory as it goes.
  */
 void free_stack(stack_t **stack)
 {
@@ -17,12 +21,4 @@ void free_stack(stack_t **stack)
 		free(*stack);
 		*stack = temp;
 	}
-}
-
-/**
- * free_all - Frees all memory allocated by a Monty program.
- */
-void free_all(void)
-{
-	free_stack(&stack);
 }
