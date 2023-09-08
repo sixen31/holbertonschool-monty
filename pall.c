@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * pall - Prints all the values on the stack, starting from the top.
+ * _pall - Prints all the values on the stack, starting from the top.
  * @stack: Double pointer to the head of the stack.
  * @line_number: Line number of the opcode.
  */
